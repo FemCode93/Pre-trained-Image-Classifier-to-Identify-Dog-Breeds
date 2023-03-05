@@ -10,7 +10,7 @@ def classify_images(images_dir, results_dic, model):
     # classifier function
     for key,value in results_dic.items():
         model_label = os.path.join(images_dir + '/' + key)
-        
+        model_label = classifier(images_dir+key, model)
         model_label = model_label.lower().strip()
               
        # defines truth as pet image label

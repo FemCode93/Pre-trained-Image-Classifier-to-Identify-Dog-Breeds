@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Alabi Opeyemi
 # DATE CREATED: 12-12-2022                              
-# REVISED DATE: 10-2-2023
+# REVISED DATE: 05-03-2023
 # PURPOSE: Create the function get_pet_labels that creates the pet labels from 
 #          the image's filename. This function inputs: 
 #           - The Image Folder as image_dir within get_pet_labels function and 
@@ -38,28 +38,39 @@ def get_pet_labels(image_dir):
          index 0 = pet image label (string)
     """
     in_files = listdir(image_dir)
-    results_dic = dict()
     
-    for filename in in_files:
+    for filename in range(0, len(in_files), 1):
         
-        if filename[0] != ".":
-            
-           
-           # Creates temporary label variable to hold pet label name extracted 
-            
-            pet_image_name = filename
-            pet_image_name = pet_image_name.lower().split("_")
-            
-            pet_label = ' '.join([names for names in pet_image_name if names.isalpha()])
-                    
-            pet_label = pet_label.strip()
-                
-             
-        if filename not in results_dic:
-            
-            results_dic[filename] = [pet_label]
-
+        in_files[filename] = in_files[filename].lower()
+    
+    in_files = []
+    for filename in in_files:
+        split = filename.split("_")
+        pet_name = " "
+        for name in split:
+            if name.isalpha():
+                pet_name += name + " "
+        
+        pet_name_list.append(pet_name.strip())
+        
+     #Create empty dictionary named results_dic
+    results_dic = dict()
+    filename_list = listdir(image_dir)
+    number_in_dict = len(results_dic)
+   
+    for key in range(0, len(filename_list), 1):
+        if filename_list[key] not in results_dic:
+            label_list = []
+            label_list.append(pet_name_list[key])
+            results_dic[filename_list[key]] = label_list
         else:
-            print("** Warning: Duplicate files exist in directory:", filename)
-                    
+            print("Warning: Key = ", filename_list[key], "already exists in results_dic with value = ", results_dic[filename_list[key]])
+            #Iterating through a dictionary printing all keys and their corresponding values
+    #print("\Printing all key_value pairs in dictionary results_dic:")
+    for key in results_dic:
+        print("Filename = ", key, "Pet Label = ", results_dic[key])
+        
+              
+    # Replace None with the results_dic dictionary that you created with this
+    # function
     return results_dic

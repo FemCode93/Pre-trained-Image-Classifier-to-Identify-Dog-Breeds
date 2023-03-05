@@ -80,7 +80,7 @@ def print_results(results_dic, results_stats_dic, model,
         
         if key.startswith('p'):
              
-            print('{:20}: {:2.2%}'.format(key, value))
+            print("{:20}: {:5.1f}".format(key, value))
             
 
 

@@ -98,6 +98,6 @@ def adjust_results4_isadog(results_dic, dogfile):
         else:
 
             if value[1] in dognames_dic:
-                value.extend((0, 0))         
+                value.extend((0, 1))         
             else:
-                value.extend((0, 1))
+                value.extend((0, 0))
