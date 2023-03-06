@@ -40,10 +40,9 @@ def get_pet_labels(image_dir):
     in_files = listdir(image_dir)
     
     for filename in range(0, len(in_files), 1):
-        
         in_files[filename] = in_files[filename].lower()
     
-    in_files = []
+    pet_name_list = []
     for filename in in_files:
         split = filename.split("_")
         pet_name = " "

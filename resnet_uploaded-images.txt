@@ -2,6 +2,10 @@ Command Line Arguments:
      dir = uploaded_images/ 
     arch = resnet 
  dogfile = dognames.txt
+Filename =  Dog_01.jpg.jpg Pet Label =  ['dog']
+Filename =  Fox_01.jpg.jpeg Pet Label =  ['fox']
+Filename =  Dog_02.jpg.jpg Pet Label =  ['dog']
+Filename =  Tree_01.jpg.jpeg Pet Label =  ['tree']
 
 Pet Image Label Dictionary has 4 key-value pairs.
 Below are 4 of them:
@@ -12,51 +16,51 @@ Below are 4 of them:
 
      MATCH:
 
-                Dog_01.jpg.jpg: 
-Real:                        dog   Classifier: uploaded_images//dog_01.jpg.jpg
-
                Fox_01.jpg.jpeg: 
-Real:                        fox   Classifier: uploaded_images//fox_01.jpg.jpeg
-
-                Dog_02.jpg.jpg: 
-Real:                        dog   Classifier: uploaded_images//dog_02.jpg.jpg
-
-              Tree_01.jpg.jpeg: 
-Real:                       tree   Classifier: uploaded_images//tree_01.jpg.jpeg
+Real:                        fox   Classifier:         red fox, vulpes vulpes
 
  NOT A MATCH:
 
-# Total Images 4 # Matches: 4 # NOT Matches: 0
+                Dog_01.jpg.jpg: 
+Real:                        dog   Classifier:            rhodesian ridgeback
+
+                Dog_02.jpg.jpg: 
+Real:                        dog   Classifier:      vizsla, hungarian pointer
+
+              Tree_01.jpg.jpeg: 
+Real:                       tree   Classifier: megalith, megalithic structure
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
 
      MATCH:
 
-                Dog_01.jpg.jpg: 
-Real:                        dog   Classifier: uploaded_images//dog_01.jpg.jpg  
-PetLabelDog: 1  ClassLabelDog: 0
-
                Fox_01.jpg.jpeg: 
-Real:                        fox   Classifier: uploaded_images//fox_01.jpg.jpeg  
-PetLabelDog: 0  ClassLabelDog: 1
-
-                Dog_02.jpg.jpg: 
-Real:                        dog   Classifier: uploaded_images//dog_02.jpg.jpg  
-PetLabelDog: 1  ClassLabelDog: 0
-
-              Tree_01.jpg.jpeg: 
-Real:                       tree   Classifier: uploaded_images//tree_01.jpg.jpeg  
-PetLabelDog: 0  ClassLabelDog: 1
+Real:                        fox   Classifier:         red fox, vulpes vulpes  
+PetLabelDog: 0  ClassLabelDog: 0
 
  NOT A MATCH:
 
-# Total Images 4 # Matches: 4 # NOT Matches: 0
+                Dog_01.jpg.jpg: 
+Real:                        dog   Classifier:            rhodesian ridgeback  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                Dog_02.jpg.jpg: 
+Real:                        dog   Classifier:      vizsla, hungarian pointer  
+PetLabelDog: 1  ClassLabelDog: 1
+
+              Tree_01.jpg.jpeg: 
+Real:                       tree   Classifier: megalith, megalithic structure  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
 
  ** Statistics from calculates_results_stats() function:
 N Images:  4  N Dog Images:  2  N NotDog Images:  2 
-Pct Corr dog:   0.0 Pct Corr NOTdog:   0.0  Pct Corr Breed: 100.0
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
  ** Check Statistics - calculated from this function as a check:
 N Images:  4  N Dog Images:  2  N NotDog Images:  2 
-Pct Corr dog:   0.0 Pct Corr NOTdog:   0.0  Pct Corr Breed:   0.0
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
 
 *** Results Summary for CNN Model Architecture RESNET ***
@@ -64,15 +68,14 @@ N Images            :   4
 N Dog Images        :   2
 N Not-Dog Images    :   2
  
-pct_match           : 10000.00%
-pct_correct_dogs    : 0.00%
-pct_correct_breed   : 10000.00%
-pct_correct_notdogs : 0.00%
+pct_correct_dogs    : 100.0
+pct_correct_breed   :   0.0
+pct_correct_notdogs : 100.0
 
 INCORRECT Dog/NOT Dog Assignments:
-Real:                        fox   Classifier: uploaded_images//fox_01.jpg.jpeg
-Real:                       tree   Classifier: uploaded_images//tree_01.jpg.jpeg
 
 INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:            rhodesian ridgeback
+Real:                        dog   Classifier:      vizsla, hungarian pointer
 
 ** Total Elapsed Runtime: 0:0:0
